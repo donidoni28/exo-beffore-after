@@ -5,7 +5,7 @@ h1{
     position: relative;
     max-width: fit-content;
     margin: 20px 0px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 h1::before,
 h1::after{
