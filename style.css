@@ -55,9 +55,11 @@ h1:hover::before,h1:hover::after{
     transition: right 2s, width 2s ;
 }
 /* ----------------------------------- EXO3 ----------------------------------- */
+/* H1 FROM EXO3 */
 #exo3 h1{
     padding: 5px;
 }
+/* INIT BEFORE */
 #exo3 h1::before{
     left: 0;
     bottom: 0;
@@ -65,20 +67,24 @@ h1:hover::before,h1:hover::after{
     width: 100%;
     z-index: -1;
 }
+/* TRANSITION ON HOVER */
 #exo3 h1:hover::before{
     transition: height 2s;
 }
 /* ----------------------------------- EXO4 ----------------------------------- */
+/* H1 FROM EXO4 */
 #exo4 h1{
     padding: 5px;
     overflow: hidden;
 }
+/* INIT BEFORE */
 #exo4 h1::before{
     width: 0;
     height: 0;
     top: 0;
     left: 0;  
 } 
+/* INIT AFTER */
 #exo4 h1::after {
     width: 0;
     height: 0;
@@ -87,6 +93,7 @@ h1:hover::before,h1:hover::after{
     border-left: 3px solid red;
     border-bottom: 3px solid red;
 }
+/* TRANSITION BEFORE ON HOVER */
 #exo4 h1:hover::before {
     width: 96%;
     height: 92%;
@@ -94,6 +101,7 @@ h1:hover::before,h1:hover::after{
     border-top: 3px solid red;
     transition: width  1s ease-in-out, height  1s 1s ease-in-out;
 }
+/* TRANSITION AFTER ON HOVER */
 #exo4 h1:hover::after {
     border-bottom-color: red;
     border-left-color: red;
