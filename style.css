@@ -1,0 +1,84 @@
+/* ----------------------------------- LES TRANSITIONS ----------------------------------- */
+/* ----------------------- INIT ----------------------- */
+h1{
+    display: inline;
+    position: relative;
+    max-width: fit-content;
+}
+h1::before,
+h1::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+h1:hover::before,h1:hover::after{
+    width: 100%;
+    height: 100%;
+}
+/* ----------------------------------- EXO1 ----------------------------------- */
+/* ELEMENT AFTER DE H1 */
+#exo1 h1::before {
+    bottom: 0;
+    left: 0;
+}
+/* HOVER ON ELEMENT::after */
+#exo1 h1:hover::before {
+    transition: width 2s;
+    border-bottom: 3px solid red ;
+}
+/* ----------------------------------- EXO2 ----------------------------------- */
+/* SPECIFIC LEFT INIT */
+#exo2 h1::before{
+    left: 50%;
+    bottom: 0;
+}
+/* TRANSITION ON HOVER FROM 50% TO 0% (LEFT DIRECTION) */
+#exo2 h1:hover::before {
+    left: 0;
+    width: 50%;
+    border-bottom: 3px solid red ;
+    transition: left 2s, width 2s;
+}
+/* SPECIFIC RIGHT INIT */
+#exo2 h1::after{
+    right: 50%;
+    bottom: 0;
+}
+/* TRANSITION ON HOVER FROM 50% TO 0% (RIGHT DIRECTION) */
+#exo2 h1:hover::after {
+    right: 0;
+    width: 50%;
+    border-bottom: 3px solid red ;
+    transition: right 2s, width 2s ;
+}
+/* ----------------------------------- EXO3 ----------------------------------- */
+#exo3 h1::before{
+    left: 0;
+    bottom: 0;
+    background-color: red;
+    width: 100%;
+    z-index: -1;
+}
+#exo3 h1:hover::before{
+    transition: height 2s;
+}
+/* ----------------------------------- EXO4 ----------------------------------- */
+#exo4 h1::before{
+    top: 0;
+    left: 0;
+} 
+#exo4 h1::after {
+    bottom: -10%;
+    right: 0;
+}
+#exo4 h1:hover::before {
+    border-right: 3px solid red;
+    border-top: 3px solid red;
+    transition: width 2s linear, height 2s 2s linear;
+}
+#exo4 h1:hover::after {
+    border-left: 3px solid red;
+    border-bottom: 3px solid red;
+    transition: width 2s 4s linear, height 2s 6s linear;
+}
