@@ -1,9 +1,11 @@
 /* ----------------------------------- LES TRANSITIONS ----------------------------------- */
 /* ----------------------- INIT ----------------------- */
 h1{
-    display: inline;
+    display: inline-block;
     position: relative;
     max-width: fit-content;
+    margin: 20px 0px;
+    border: 1px solid black;
 }
 h1::before,
 h1::after{
@@ -53,6 +55,9 @@ h1:hover::before,h1:hover::after{
     transition: right 2s, width 2s ;
 }
 /* ----------------------------------- EXO3 ----------------------------------- */
+#exo3 h1{
+    padding: 3px;
+}
 #exo3 h1::before{
     left: 0;
     bottom: 0;
@@ -64,21 +69,32 @@ h1:hover::before,h1:hover::after{
     transition: height 2s;
 }
 /* ----------------------------------- EXO4 ----------------------------------- */
+#exo4 h1{
+    padding: 3px;
+}
 #exo4 h1::before{
+    width: 0;
+    height: 0;
     top: 0;
-    left: 0;
+    left: 0;  
 } 
 #exo4 h1::after {
-    bottom: -10%;
+    width: 0;
+    height: 0;
+    bottom: 0%;
     right: 0;
 }
 #exo4 h1:hover::before {
+    width: 96%;
+    height: 92%;
     border-right: 3px solid red;
     border-top: 3px solid red;
-    transition: width 2s linear, height 2s 2s linear;
+    transition: width  1s ease-in-out, height  1s 1s ease-in-out;
 }
 #exo4 h1:hover::after {
+    width: 96%;
+    height: 92%;
     border-left: 3px solid red;
     border-bottom: 3px solid red;
-    transition: width 2s 4s linear, height 2s 6s linear;
+    transition: width 1s 2s ease-in-out, height 1s 3s ease-in-out;
 }
