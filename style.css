@@ -5,6 +5,7 @@ h1{
     position: relative;
     max-width: fit-content;
     margin: 20px 0px;
+    overflow: hidden;
     /* border: 1px solid black; */
 }
 h1::before,
@@ -23,41 +24,47 @@ h1:hover::before,h1:hover::after{
 #exo1 h1::before {
     bottom: 0;
     left: 0;
+    border-bottom: 3px solid red ;
+    transition: width 2s;
 }
 /* HOVER ON ELEMENT::after */
 #exo1 h1:hover::before {
     transition: width 2s;
-    border-bottom: 3px solid red ;
 }
 /* ----------------------------------- EXO2 ----------------------------------- */
-/* SPECIFIC LEFT INIT */
+/* LEFT INIT */
 #exo2 h1::before{
     left: 50%;
+    width: 0;
     bottom: 0;
+    border-bottom: 3px solid red ;
+    transition: left 2s, width 2s;
 }
 /* TRANSITION ON HOVER FROM 50% TO 0% (LEFT DIRECTION) */
 #exo2 h1:hover::before {
     left: 0;
     width: 50%;
-    border-bottom: 3px solid red ;
     transition: left 2s, width 2s;
 }
-/* SPECIFIC RIGHT INIT */
+/* RIGHT INIT */
 #exo2 h1::after{
     right: 50%;
+    width: 0;
     bottom: 0;
+    border-bottom: 3px solid red ;
+    transition: right 2s, width 2s ;
 }
 /* TRANSITION ON HOVER FROM 50% TO 0% (RIGHT DIRECTION) */
 #exo2 h1:hover::after {
     right: 0;
     width: 50%;
-    border-bottom: 3px solid red ;
     transition: right 2s, width 2s ;
 }
 /* ----------------------------------- EXO3 ----------------------------------- */
 /* H1 FROM EXO3 */
 #exo3 h1{
     padding: 5px;
+    overflow: hidden;
 }
 /* INIT BEFORE */
 #exo3 h1::before{
@@ -66,6 +73,7 @@ h1:hover::before,h1:hover::after{
     background-color: red;
     width: 100%;
     z-index: -1;
+    transition: height 1s;
 }
 /* TRANSITION ON HOVER */
 #exo3 h1:hover::before{
@@ -79,33 +87,29 @@ h1:hover::before,h1:hover::after{
 }
 /* INIT BEFORE */
 #exo4 h1::before{
-    width: 0;
-    height: 0;
     top: 0;
-    left: 0;  
+    left: -6%;  
+    border-top: 3px solid red;
+    border-right: 3px solid red;
+    transition: width 500ms 1500ms ease-in-out, height 500ms 1000ms ease-in-out;
 } 
 /* INIT AFTER */
 #exo4 h1::after {
-    width: 0;
-    height: 0;
     bottom: 0%;
     right: -6%;
     border-left: 3px solid red;
     border-bottom: 3px solid red;
+    transition: width 500ms 500ms ease-in-out, height 500ms ease-in-out;
 }
-/* TRANSITION BEFORE ON HOVER */
+/* TRANSITION BEFORE ON HOVER (BORDER TOP-RIGHT) */
 #exo4 h1:hover::before {
-    width: 96%;
-    height: 92%;
-    border-right: 3px solid red;
-    border-top: 3px solid red;
-    transition: width  1s ease-in-out, height  1s 1s ease-in-out;
-}
-/* TRANSITION AFTER ON HOVER */
-#exo4 h1:hover::after {
-    border-bottom-color: red;
-    border-left-color: red;
-    transition: width 1s 2s ease-in-out, border-bottom-color, height 1s 3s ease-in-out, border-left-color;
     width: 102%;
     height: 92%;
+    transition: width  500ms ease-in-out, height  500ms 500ms ease-in-out;
+}
+/* TRANSITION AFTER ON HOVER (BORDER BOTTOM-LEFT) */
+#exo4 h1:hover::after {
+    width: 102%;
+    height: 92%;
+    transition: width 500ms 1000ms ease-in-out, height 500ms 1500ms ease-in-out;
 }
